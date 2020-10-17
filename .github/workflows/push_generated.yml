@@ -14,7 +14,7 @@ on:
       #  required: true
       user:
         description: 'Optional] Name of user that makes the commit (author).'
-        default: '${{ GITHUB_ACTOR }}'
+        default: $GITHUB_ACTOR
         #required: true
       user_email:
         description: '[Optional] Email of commit author.'
