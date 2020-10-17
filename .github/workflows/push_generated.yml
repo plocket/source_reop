@@ -48,6 +48,6 @@ jobs:
           ## Destination repository
           #destination-repository-name: ${{ github.event.inputs.repo }}
           # Email for the git commit
-          user-email: '52798256+plocket@users.noreply.github.com'
+          user_email: '52798256+plocket@users.noreply.github.com'
           target-branch: ${{ github.event.inputs.branch }}
           destination_folder: 'folder_test_1'
