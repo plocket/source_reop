@@ -31,7 +31,7 @@ jobs:
       - name: creates output
         run:  sh ./build_test_boilerplate.sh
       - name: Pushes to another repository
-        uses: plocket/github-action-push-to-another-repository@master
+        uses: plocket/github-action-push-to-another-repository@destination_folder
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
@@ -43,4 +43,5 @@ jobs:
           destination-repository-name: ${{ github.event.inputs.repo }}
           # Email for the git commit
           user-email: '52798256+plocket@users.noreply.github.com'
-          target-branch: ${{ github.event.inputs.branch }} 
+          target-branch: ${{ github.event.inputs.branch }}
+          destination_folder: 'folder_test_1'
