@@ -4,6 +4,9 @@ name: Push integrated testing files
 on: 
   workflow_dispatch:
     inputs:
+      destination_repo:
+        description: user_name/repo_name
+        required: true
       repo:
         description: Name of repo where you want the files to go
         required: true
@@ -31,10 +34,11 @@ jobs:
       - name: creates output
         run:  sh ./build_test_boilerplate.sh
       - name: Pushes to another repository
-        uses: plocket/github-action-push-to-another-repository@destination_folder
+        uses: plocket/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
+          destination_repo: ${{ github.event.inputs.destination_repo }}
           # Source directory from the origin directory
           source-directory: 'output'
           # Name of the destination username/organization
