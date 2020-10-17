@@ -28,7 +28,7 @@ jobs:
       - name: creates output
         run:  sh ./build_test_boilerplate.sh
       - name: Pushes to another repository
-        uses: plocket/github-action-push-to-another-repository@master
+        uses: plocket/push-generated-file@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
