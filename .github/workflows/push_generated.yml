@@ -48,7 +48,7 @@ jobs:
           # Source directory from the origin directory
           source_file_path: 'output'
           # Name of the destination username/organization
-          user_name: '${{ github.actor }} '
+          user_name: $GITHUB_ACTOR
           ## Destination repository
           #destination-repository-name: ${{ github.event.inputs.repo }}
           # Email for the git commit
