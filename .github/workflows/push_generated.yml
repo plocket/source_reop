@@ -8,17 +8,6 @@ on:
         description: user_name/repo_name where the files will be pushed
         default: plocket/destination_repo
         required: true
-      #repo:
-      #  description: Name of repo where you want the files to go
-      #  default: destination_repo
-      #  required: true
-      #user:
-      #  description: 'Optional] Name of user that makes the commit (author).'
-      #  default: 
-      #  #required: true
-      #user_email:
-      #  description: '[Optional] Email of commit author.'
-      #  default: '${{ github.event.head_commit.author.email }}'
       branch:
         description: Name of branch to push to on repo
         default: main
@@ -44,14 +33,12 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           token: ${{ secrets.API_TOKEN_GITHUB }}
-          destination_repo: ${{ github.event.inputs.destination_repo }}
           # Source directory from the origin directory
           source_file_path: 'output'
-          # Name of the destination username/organization
-          author: $GITHUB_ACTOR
-          ## Destination repository
-          #destination-repository-name: ${{ github.event.inputs.repo }}
-          # Email for the git commit
-          author_email: '${{ github.event.head_commit.author.email }}'
-          target_branch: ${{ github.event.inputs.branch }}
+          destination_repo: ${{ github.event.inputs.destination_repo }}
           destination_folder: 'folder_test_1'
+          target_branch: ${{ github.event.inputs.branch }}
+          ## Name of author of the commit. No idea how to put a useful var here.
+          #author: $GITHUB_ACTOR
+          ## Email for the git commit
+          #author_email: '${{ github.event.head_commit.author.email }}'
