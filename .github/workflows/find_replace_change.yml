@@ -1,4 +1,4 @@
-name: Push integrated testing files
+name: Copy find replace push
 
 # Workflow triggered manually with input variables
 on: 
