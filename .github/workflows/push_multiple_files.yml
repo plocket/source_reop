@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.API_TOKEN_GITHUB }}
           source_file_path: 'output'
           destination_repo: ${{ github.event.inputs.destination_repo }}
-          destination_folder: '${{ github.event.inputs.prefix }}_folder_test'
+          destination_folder: 'folder_test'
           target_branch: ${{ github.event.inputs.branch }}
 
   find-replace:
@@ -55,5 +55,5 @@ jobs:
           token: ${{ secrets.API_TOKEN_GITHUB }}
           source_file_path: 'output'
           destination_repo: ${{ github.event.inputs.destination_repo }}
-          destination_folder: '${{ github.event.inputs.prefix }}_different/nested_folder'
+          destination_folder: 'different/nested_folder'
           target_branch: ${{ github.event.inputs.branch }}
