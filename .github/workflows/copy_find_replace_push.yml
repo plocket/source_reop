@@ -26,6 +26,8 @@ jobs:
       - uses: actions/checkout@v2
         
       - name: creates output
+        env:
+          DESTINATION_REPO: ${{ github.event.inputs.destination_repo }}
         #run:  sh ./build_test_boilerplate.sh
         run:  sh ./copy_replace_generate.sh
       - name: Pushes to another repository
