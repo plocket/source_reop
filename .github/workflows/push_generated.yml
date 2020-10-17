@@ -5,17 +5,17 @@ on:
   workflow_dispatch:
     inputs:
       destination_repo:
-        description: user_name/repo_name
+        description: user_name/repo_name where the files will be pushed
         default: plocket/destination_repo
         required: true
-      repo:
-        description: Name of repo where you want the files to go
-        default: destination_repo
-        required: true
+      #repo:
+      #  description: Name of repo where you want the files to go
+      #  default: destination_repo
+      #  required: true
       user:
-        description: Name of user that owns the repo
-        default: plocket
-        required: true
+        description: Name of user that makes the commit
+        #default: plocket
+        #required: true
       branch:
         description: Name of branch to push to on repo
         default: main
