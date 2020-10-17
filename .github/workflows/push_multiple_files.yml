@@ -5,13 +5,16 @@ on:
   workflow_dispatch:
     inputs:
       destination_repo:
-        description: user_name/repo_name where the files will be pushed
+        description: 'user_name/repo_name where the files will be pushed'
         default: plocket/destination_repo
         required: true
       branch:
-        description: Name of branch to push to on repo
+        description: 'Name of branch to push to on repo'
         default: main
         required: true
+      prefix:
+        description: 'Make these file names unique'
+        default: ''
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,7 +35,7 @@ jobs:
           token: ${{ secrets.API_TOKEN_GITHUB }}
           source_file_path: 'output'
           destination_repo: ${{ github.event.inputs.destination_repo }}
-          destination_folder: 'folder_test_1'
+          destination_folder: '${{ github.event.inputs.prefix }}_folder_test'
           target_branch: ${{ github.event.inputs.branch }}
 
   find-replace:
@@ -52,5 +55,5 @@ jobs:
           token: ${{ secrets.API_TOKEN_GITHUB }}
           source_file_path: 'output'
           destination_repo: ${{ github.event.inputs.destination_repo }}
-          destination_folder: 'folder_test_1'
+          destination_folder: '${{ github.event.inputs.prefix }}_different/nested_folder'
           target_branch: ${{ github.event.inputs.branch }}
