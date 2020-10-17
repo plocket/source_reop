@@ -13,9 +13,12 @@ on:
       #  default: destination_repo
       #  required: true
       user:
-        description: Name of user that makes the commit
-        #default: plocket
+        description: 'Optional] Name of user that makes the commit (author).'
+        default: ${{ github.event.head_commit.author.name }}
         #required: true
+      user_email:
+        description: '[Optional] Email of commit author.'
+        default: ${{ github.event.head_commit.author.email }}
       branch:
         description: Name of branch to push to on repo
         default: main
