@@ -5,6 +5,6 @@ mkdir output
 
 #repo=$1
 
-cat > output/practice_file4.txt << ENDOFFILE
-Practicing practice 4
+cat > output/practice_file5.txt << ENDOFFILE
+Practicing practice 5
 ENDOFFILE
