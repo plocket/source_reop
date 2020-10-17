@@ -44,7 +44,7 @@ jobs:
           # Source directory from the origin directory
           source-directory: 'output'
           # Name of the destination username/organization
-          destination-github-username: ${{ github.event.inputs.user }}
+          user_name: ${{ github.event.inputs.user }}
           # Destination repository
           destination-repository-name: ${{ github.event.inputs.repo }}
           # Email for the git commit
