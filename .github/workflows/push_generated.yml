@@ -45,8 +45,8 @@ jobs:
           source-directory: 'output'
           # Name of the destination username/organization
           user_name: ${{ github.event.inputs.user }}
-          # Destination repository
-          destination-repository-name: ${{ github.event.inputs.repo }}
+          ## Destination repository
+          #destination-repository-name: ${{ github.event.inputs.repo }}
           # Email for the git commit
           user-email: '52798256+plocket@users.noreply.github.com'
           target-branch: ${{ github.event.inputs.branch }}
