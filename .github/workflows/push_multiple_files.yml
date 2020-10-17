@@ -1,4 +1,4 @@
-name: Push integrated testing files
+name: Multiple files
 
 # Workflow triggered manually with input variables
 on: 
