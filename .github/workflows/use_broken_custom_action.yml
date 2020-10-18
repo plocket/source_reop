@@ -1,4 +1,4 @@
-name: From other repo push integrated testing files
+name: Use repo that used copy and paste instead of forking and is therefore broken somehow
 
 # Workflow triggered manually with input variables
 on: 
